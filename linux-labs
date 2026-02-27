@@ -1,0 +1,32 @@
+=====================================================
+PHASE 2 LAB: FILE SYSTEM EXPLORATION
+=====================================================
+
+# Show current directory
+pwd
+
+# Explore root
+ls -la /
+
+# Inspect configuration files
+ls -l /etc | head -20
+
+# Inspect binaries
+ls -l /bin | head
+
+# Check user directories
+ls -l /home
+
+# Check logs
+ls -l /var/log | head
+
+# Check disk usage
+du -sh /home/*
+du -sh /var/*
+
+# Check overall disk space
+df -h
+
+# Detailed file information
+stat /etc/passwd
+stat /bin/ls
