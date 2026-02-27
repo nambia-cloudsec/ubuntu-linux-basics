@@ -1,31 +1,24 @@
-# Phase 2: Linux File System Deep Dive
+# Phase 3: Linux Permissions & Ownership
 
-## Key Linux Directories
+## 1. File Permissions Overview
+- Linux permissions: `r` (read), `w` (write), `x` (execute)
+- Owner, Group, Others
+- View permissions: `ls -l`
 
-| Directory | Description |
-|-----------|-------------|
-| `/`       | Root directory; starting point of the filesystem |
-| `/bin`   | Essential binaries for all users |
-| `/sbin`  | System binaries for administrative tasks |
-| `/usr`   | User applications, libraries, and shared data (`/usr/bin`, `/usr/lib`, `/usr/share`) |
-| `/etc`   | Configuration files for system and services |
-| `/var`   | Variable data: logs, caches, mail, databases |
-| `/tmp`   | Temporary files, usually cleared on reboot |
-| `/home`  | User home directories |
-| `/lib` & `/lib64` | Shared libraries and kernel modules |
-| `/boot`  | Bootloader files, kernel images |
-| `/dev`   | Device files for hardware & virtual devices |
-| `/proc`  | Virtual filesystem with kernel & process info |
-| `/sys`   | Kernel device information |
-| `/opt`   | Optional software packages |
+## 2. Changing Permissions
+- `chmod 644 file.txt` → owner read/write, group/others read
+- `chmod 755 script.sh` → owner read/write/execute, others read/execute
 
----
+## 3. Changing Ownership
+- `chown user file.txt` → change owner
+- `chown user:group file.txt` → change owner and group
 
-## Commands to Explore Directories
+## 4. Special Permissions
+- `chmod +x file` → make executable
+- `chmod u+s file` → setuid
+- `chmod g+s dir` → setgid
 
-- List contents:
-
-```bash
-ls -l /etc
-ls -lh /var/log
-ls -a /home/nambia-mangare
+## 5. Directory Permissions
+- `r` → list files
+- `w` → create/delete files
+- `x` → access files in dir

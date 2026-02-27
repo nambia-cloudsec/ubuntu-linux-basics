@@ -1,14 +1,22 @@
 # Phase 3: Permissions & Ownership Exercises
 
-# Exercise 1: Create files with different permissions
-touch file1 file2
-chmod 644 file1
-chmod 600 file2
+# Exercise 1: Create sample files
+touch file1 file2 file3
 
-# Exercise 2: Change ownership (use sudo if necessary)
-sudo chown root file1
-sudo chown nambia-mangare file2
+# Exercise 2: Set different permissions
+chmod 644 file1      # owner read/write, others read
+chmod 600 file2      # owner read/write, others none
+chmod 755 file3      # owner read/write/execute, others read/execute
 
-# Exercise 3: Explore directories
-ls -l /etc
-ls -ld /var /usr /home
+# Exercise 3: Explore file permissions
+ls -l
+
+# Exercise 4: Change ownership (use sudo if needed)
+sudo chown nambia-mangare file1
+sudo chown root file2
+
+# Exercise 5: Explore directories permissions
+ls -ld /etc /var /usr /home
+
+# Exercise 6: Try special permissions
+chmod +x file3       # make executable
