@@ -1,10 +1,31 @@
-## Permission Denied Errors
+# Phase 2: Linux File System Deep Dive
 
-When running commands like `du` on system directories such as `/var`,
-permission denied errors appear because many folders are owned by root.
+## Key Linux Directories
 
-To view full contents:
+| Directory | Description |
+|-----------|-------------|
+| `/`       | Root directory; starting point of the filesystem |
+| `/bin`   | Essential binaries for all users |
+| `/sbin`  | System binaries for administrative tasks |
+| `/usr`   | User applications, libraries, and shared data (`/usr/bin`, `/usr/lib`, `/usr/share`) |
+| `/etc`   | Configuration files for system and services |
+| `/var`   | Variable data: logs, caches, mail, databases |
+| `/tmp`   | Temporary files, usually cleared on reboot |
+| `/home`  | User home directories |
+| `/lib` & `/lib64` | Shared libraries and kernel modules |
+| `/boot`  | Bootloader files, kernel images |
+| `/dev`   | Device files for hardware & virtual devices |
+| `/proc`  | Virtual filesystem with kernel & process info |
+| `/sys`   | Kernel device information |
+| `/opt`   | Optional software packages |
 
-    sudo du -sh /var/*
+---
 
-Linux restricts access for security reasons.
+## Commands to Explore Directories
+
+- List contents:
+
+```bash
+ls -l /etc
+ls -lh /var/log
+ls -a /home/nambia-mangare
