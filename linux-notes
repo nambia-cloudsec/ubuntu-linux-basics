@@ -1,49 +1,10 @@
-=====================================================
-PHASE 2: LINUX FILE SYSTEM DEEP DIVE
-=====================================================
+## Permission Denied Errors
 
-OVERVIEW
-Linux uses a hierarchical file system starting from the root directory (/).
+When running commands like `du` on system directories such as `/var`,
+permission denied errors appear because many folders are owned by root.
 
-Everything begins from:
+To view full contents:
 
-/
+    sudo du -sh /var/*
 
-KEY DIRECTORIES
-
-/        → Root of the entire file system
-/bin     → Essential command binaries (ls, cp, mv, cat)
-/sbin    → System administration binaries
-/etc     → Configuration files
-/home    → User home directories
-/var     → Variable data (logs, cache, spool)
-/usr     → User programs and applications
-/tmp     → Temporary files
-/lib     → Shared libraries
-/opt     → Optional third-party software
-
-IMPORTANT CONCEPTS
-
-- Linux does NOT use drive letters like Windows.
-- Everything branches from /
-- Configuration files are mostly in /etc
-- Logs are in /var/log
-- User data is in /home
-
-COMMANDS USED TO INSPECT FILE SYSTEM
-
-ls -la /
-ls -l /etc
-ls -l /bin | head
-du -sh /home/*
-du -sh /var/*
-df -h
-stat /etc/passwd
-
-WHY THIS MATTERS
-
-Understanding the Linux file system is critical for:
-- Troubleshooting
-- Log analysis
-- Security auditing
-- System administration
+Linux restricts access for security reasons.
