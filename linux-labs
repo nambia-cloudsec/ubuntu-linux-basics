@@ -1,28 +1,37 @@
 # ==============================
-# Phase 5: Advanced Permissions Labs
+# Phase 6: Processes & Jobs Labs
 # ==============================
 
-# 1. Create test executable
-touch testscript.sh
-chmod 755 testscript.sh
-ls -l testscript.sh
+# 1. View processes
+ps aux | head
 
-# 2. Apply SUID
-chmod 4755 testscript.sh
-ls -l testscript.sh
+# 2. Run background job
+sleep 120 &
+jobs
 
-# 3. Create shared directory
-mkdir shared-dir
-chmod 2775 shared-dir
-ls -ld shared-dir
+# 3. Bring job to foreground
+fg %1
 
-# 4. Apply sticky bit
-mkdir public-dir
-chmod 1777 public-dir
-ls -ld public-dir
+# 4. Stop job (Press Ctrl + Z)
+# Then run:
+bg %1
+jobs
 
-# 5. Test ACL (install if needed)
-sudo apt install acl -y
-touch acl-file
-setfacl -m u:nambia-mangare:rwx acl-file
-getfacl acl-file
+# 5. Kill a process
+sleep 300 &
+ps aux | grep sleep
+kill <PID>
+
+# 6. Force kill
+sleep 300 &
+ps aux | grep sleep
+kill -9 <PID>
+
+# 7. Change priority
+sleep 300 &
+ps aux | grep sleep
+renice 10 <PID>
+
+# 8. Install and use htop
+sudo apt install htop -y
+htop

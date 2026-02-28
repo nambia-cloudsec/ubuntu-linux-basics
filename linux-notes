@@ -1,82 +1,115 @@
-# Phase 5: Advanced Permissions (SUID, SGID, Sticky Bit & ACLs)
+# Phase 6: Processes, Background Jobs & Signals
 
-## 1. Special Permission Bits
+## 1. What is a Process?
 
-There are three advanced permission bits in Linux:
+A process is a running instance of a program.
 
-1. SUID (Set User ID)
-2. SGID (Set Group ID)
-3. Sticky Bit
-
----
-
-## 2. SUID (Set User ID)
-
-- When applied to an executable file, it runs with the owner's permissions.
-- Symbolic: `chmod u+s file`
-- Numeric: `chmod 4755 file`
-
-Example:-rwsr-xr-x
-
-
-Notice the `s` in place of execute for user.
-
-Common example:
-`/usr/bin/passwd` runs as root using SUID.
+Every process has:
+- PID (Process ID)
+- PPID (Parent Process ID)
+- Owner
+- CPU & Memory usage
+- State (Running, Sleeping, Stopped, Zombie)
 
 ---
 
-## 3. SGID (Set Group ID)
+## 2. Viewing Processes
 
-- On files → runs with group permissions.
-- On directories → new files inherit the directory's group.
+View all running processes:
+`ps aux`
 
-Symbolic:
-`chmod g+s dir`
+Better live view:
+`top`
 
-Numeric:
-`chmod 2775 dir`
+Modern alternative:
+`htop`
 
-Example:drwxrwsr-x
-
-
----
-
-## 4. Sticky Bit
-
-- Used mostly on shared directories.
-- Only file owner can delete their own files.
-- Common on `/tmp`.
-
-Symbolic:
-`chmod +t dir`
-
-Numeric:
-`chmod 1777 dir`
-
-Example:drwxrwxrwt
-
+Install htop:
+`sudo apt install htop`
 
 ---
 
-## 5. ACL (Access Control Lists)
+## 3. Foreground vs Background Jobs
 
-ACL allows more fine-grained permissions beyond owner/group/others.
+Foreground job:
+Runs in the terminal and blocks it.
 
-Check if ACL is supported:
-`getfacl file`
+Background job:
+Runs without blocking the terminal.
 
-Set ACL:
-`setfacl -m u:username:rwx file`
+Run in background:
+`command &`
 
-Remove ACL:
-`setfacl -x u:username file`
+Example:
+`sleep 60 &`
 
 ---
 
-## 6. Key Takeaways
+## 4. Job Control
 
-- Use SUID carefully (security risk if misused).
-- SGID useful for shared team directories.
-- Sticky bit prevents users from deleting others' files.
-- ACL provides advanced permission control.
+See background jobs:
+`jobs`
+
+Bring job to foreground:
+`fg %1`
+
+Stop running job:
+Press `Ctrl + Z`
+
+Resume in background:
+`bg %1`
+
+---
+
+## 5. Killing Processes
+
+Kill by PID:
+`kill PID`
+
+Force kill:
+`kill -9 PID`
+
+Kill by name:
+`pkill processname`
+
+---
+
+## 6. Process Priority (Nice Value)
+
+Check priority:
+`top`
+
+Start with lower priority:
+`nice -n 10 command`
+
+Change priority:
+`renice 15 PID`
+
+Nice values:
+-20 (highest priority)
+19  (lowest priority)
+
+---
+
+## 7. Signals
+
+Signals are messages sent to processes.
+
+Common signals:
+- SIGTERM (15) → graceful stop
+- SIGKILL (9) → force kill
+- SIGSTOP → pause
+- SIGCONT → resume
+
+View signals:
+`kill -l`
+
+---
+
+## 8. Key Takeaways
+
+- Every command creates a process.
+- Use & to background tasks.
+- Use jobs, fg, bg for job control.
+- Use kill carefully.
+- Priority affects CPU scheduling.
