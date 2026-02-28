@@ -1,4 +1,53 @@
 # Phase 1 Labs
-...
+- Navigate directories: `cd ~/ubuntu-linux-basics`, `ls -l`
+- Create/remove directories: `mkdir test1`, `rmdir test1`
+- Create/copy/move files: `touch file1`, `cp file1 file2`, `mv file2 file3`
+- View files: `cat file3`, `less file3`, `head file3`, `tail file3`
+
 # Phase 2 Labs
-...
+- Explore directories: `ls -l /etc`, `du -sh /var/*`
+- Check disk usage: `df -h`
+- Inspect files: `stat /etc/passwd`
+
+# Phase 3 Labs
+- Change permissions: `chmod 644 file.txt`, `chmod 755 script.sh`
+- Change ownership: `sudo chown user file`, `chgrp group file`
+- Test SUID/SGID/Sticky: `chmod u+s script.sh`, `chmod g+s script.sh`, `chmod +t /tmp/stickytest`
+
+# Phase 4 Labs
+- Add users/groups: `sudo useradd testuser`, `sudo groupadd testgroup`
+- Assign user to group: `sudo usermod -aG testgroup testuser`
+- Verify sticky bit on /tmp
+
+# Phase 5 Labs
+- Set ACL: `setfacl -m u:username:rw file.txt`
+- Verify ACL: `getfacl file.txt`
+- Test SUID/SGID scripts
+
+# Phase 6 Labs
+- Run background job: `sleep 60 &`
+- Check jobs: `jobs`
+- Bring job to foreground: `fg %1`
+- Kill process: `kill -9 PID`
+
+# Phase 7 Labs
+- Check network interfaces: `ip a`
+- Test connectivity: `ping google.com`
+- Inspect sockets: `ss -tuln`
+- Use dig/curl for DNS and HTTP requests
+
+# Phase 8 Labs
+- Update packages: `sudo apt update && sudo apt upgrade`
+- Install package: `sudo apt install tree`
+- Remove package: `sudo apt remove tree`
+
+# Phase 9 Labs
+- Write script: `nano hello.sh` with `#!/bin/bash`, `echo "Hello"`
+- Make executable: `chmod +x hello.sh`
+- Run script: `./hello.sh`
+- Loop exercise: for i in {1..5}; do echo $i; done
+
+# Phase 10 Labs
+- View logs: `tail -f /var/log/syslog`
+- Backup config: `cp /etc/netplan/*.yaml ~/backups/`
+- Create sample snapshot in VM
