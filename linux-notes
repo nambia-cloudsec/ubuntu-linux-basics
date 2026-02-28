@@ -1,53 +1,24 @@
-# Phase 10: Bash Scripting Basics
+# Phase 1: Navigation & File System Basics
 
-## 1. What is Bash?
+pwd → show current directory
+ls → list files
+ls -la → list hidden files
+cd directory → change directory
+cd .. → go back
+clear → clear terminal
 
-Bash = Bourne Again Shell
-Default shell in Ubuntu.
+# Phase 2: File & Directory Management
 
----
+touch file.txt → create file
+mkdir folder → create directory
+cp file1 file2 → copy
+mv old new → rename/move
+rm file → delete file
+rm -r folder → delete directory
 
-## 2. Create Script
+# Phase 3: File Permissions
 
-touch script.sh
-chmod +x script.sh
-
----
-
-## 3. Basic Script Structure
-
-#!/bin/bash
-
-echo "Hello World"
-
----
-
-## 4. Variables
-
-name="Lucy"
-echo $name
-
----
-
-## 5. User Input
-
-read -p "Enter your name: " user
-echo "Hello $user"
-
----
-
-## 6. If Statements
-
-if [ $user = "Lucy" ]
-then
-  echo "Welcome back!"
-fi
-
----
-
-## 7. Loops
-
-for i in {1..5}
-do
-  echo $i
-done
+ls -l → view permissions
+chmod +x file → add execute
+chmod 755 file → numeric permissions
+chown user file → change owner

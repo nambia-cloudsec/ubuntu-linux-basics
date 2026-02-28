@@ -1,14 +1,18 @@
-# ==============================
-# Phase 9: Networking Labs
-# ==============================
+Phase 1
+pwd
+ls -la
+cd /tmp
+cd ~
 
-ip a
-ip route
+Phase 2
+touch test.txt
+mkdir test-folder
+cp test.txt copy.txt
+mv copy.txt renamed.txt
+rm renamed.txt
+rm -r test-folder
 
-ping -c 4 google.com
-
-ss -tulnp
-
-nslookup google.com
-
-curl https://example.com
+phase 3
+touch script.sh
+chmod +x script.sh
+ls -l script.sh
