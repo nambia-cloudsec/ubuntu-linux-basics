@@ -1,0 +1,41 @@
+# Python Scripting Notes
+
+## 1. Check Python Version
+
+python3 --version
+
+---
+
+## 2. Create Python Script
+
+touch script.py
+
+Run:
+python3 script.py
+
+---
+
+## 3. Basic Python Script
+
+print("Hello Lucy")
+
+---
+
+## 4. Variables
+
+name = "Lucy"
+print(name)
+
+---
+
+## 5. User Input
+
+user = input("Enter your name: ")
+print("Hello", user)
+
+---
+
+## 6. If Statement
+
+if user == "Lucy":
+    print("Welcome back!")

@@ -1,37 +1,14 @@
 # ==============================
-# Phase 6: Processes & Jobs Labs
+# Phase 9: Networking Labs
 # ==============================
 
-# 1. View processes
-ps aux | head
+ip a
+ip route
 
-# 2. Run background job
-sleep 120 &
-jobs
+ping -c 4 google.com
 
-# 3. Bring job to foreground
-fg %1
+ss -tulnp
 
-# 4. Stop job (Press Ctrl + Z)
-# Then run:
-bg %1
-jobs
+nslookup google.com
 
-# 5. Kill a process
-sleep 300 &
-ps aux | grep sleep
-kill <PID>
-
-# 6. Force kill
-sleep 300 &
-ps aux | grep sleep
-kill -9 <PID>
-
-# 7. Change priority
-sleep 300 &
-ps aux | grep sleep
-renice 10 <PID>
-
-# 8. Install and use htop
-sudo apt install htop -y
-htop
+curl https://example.com

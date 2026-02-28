@@ -1,115 +1,53 @@
-# Phase 6: Processes, Background Jobs & Signals
+# Phase 10: Bash Scripting Basics
 
-## 1. What is a Process?
+## 1. What is Bash?
 
-A process is a running instance of a program.
-
-Every process has:
-- PID (Process ID)
-- PPID (Parent Process ID)
-- Owner
-- CPU & Memory usage
-- State (Running, Sleeping, Stopped, Zombie)
+Bash = Bourne Again Shell
+Default shell in Ubuntu.
 
 ---
 
-## 2. Viewing Processes
+## 2. Create Script
 
-View all running processes:
-`ps aux`
-
-Better live view:
-`top`
-
-Modern alternative:
-`htop`
-
-Install htop:
-`sudo apt install htop`
+touch script.sh
+chmod +x script.sh
 
 ---
 
-## 3. Foreground vs Background Jobs
+## 3. Basic Script Structure
 
-Foreground job:
-Runs in the terminal and blocks it.
+#!/bin/bash
 
-Background job:
-Runs without blocking the terminal.
-
-Run in background:
-`command &`
-
-Example:
-`sleep 60 &`
+echo "Hello World"
 
 ---
 
-## 4. Job Control
+## 4. Variables
 
-See background jobs:
-`jobs`
-
-Bring job to foreground:
-`fg %1`
-
-Stop running job:
-Press `Ctrl + Z`
-
-Resume in background:
-`bg %1`
+name="Lucy"
+echo $name
 
 ---
 
-## 5. Killing Processes
+## 5. User Input
 
-Kill by PID:
-`kill PID`
-
-Force kill:
-`kill -9 PID`
-
-Kill by name:
-`pkill processname`
+read -p "Enter your name: " user
+echo "Hello $user"
 
 ---
 
-## 6. Process Priority (Nice Value)
+## 6. If Statements
 
-Check priority:
-`top`
-
-Start with lower priority:
-`nice -n 10 command`
-
-Change priority:
-`renice 15 PID`
-
-Nice values:
--20 (highest priority)
-19  (lowest priority)
+if [ $user = "Lucy" ]
+then
+  echo "Welcome back!"
+fi
 
 ---
 
-## 7. Signals
+## 7. Loops
 
-Signals are messages sent to processes.
-
-Common signals:
-- SIGTERM (15) → graceful stop
-- SIGKILL (9) → force kill
-- SIGSTOP → pause
-- SIGCONT → resume
-
-View signals:
-`kill -l`
-
----
-
-## 8. Key Takeaways
-
-- Every command creates a process.
-- Use & to background tasks.
-- Use jobs, fg, bg for job control.
-- Use kill carefully.
-- Priority affects CPU scheduling.
+for i in {1..5}
+do
+  echo $i
+done

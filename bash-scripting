@@ -1,0 +1,26 @@
+# ==============================
+# Bash Practice Labs
+# ==============================
+
+# Create first script
+touch hello.sh
+chmod +x hello.sh
+
+# Add inside hello.sh:
+#!/bin/bash
+echo "Hello Lucy"
+
+# Run it
+./hello.sh
+
+# Create interactive script
+touch greet.sh
+chmod +x greet.sh
+
+# Add:
+#!/bin/bash
+read -p "Enter your name: " name
+echo "Welcome $name"
+
+# Run
+./greet.sh
