@@ -1,22 +1,23 @@
-# Phase 3: Permissions & Ownership Exercises
+# Phase 4: Ownership, Groups & Sticky Bits Exercises
 
-# Exercise 1: Create sample files
-touch file1 file2 file3
-
-# Exercise 2: Set different permissions
-chmod 644 file1      # owner read/write, others read
-chmod 600 file2      # owner read/write, others none
-chmod 755 file3      # owner read/write/execute, others read/execute
-
-# Exercise 3: Explore file permissions
+# Exercise 1: Check current ownership and groups
 ls -l
+groups
 
-# Exercise 4: Change ownership (use sudo if needed)
+# Exercise 2: Change file owner and group
 sudo chown nambia-mangare file1
-sudo chown root file2
+sudo chgrp staff file1
 
-# Exercise 5: Explore directories permissions
-ls -ld /etc /var /usr /home
+# Exercise 3: Explore sticky bit
+mkdir sticky-dir
+chmod 1777 sticky-dir   # set sticky bit
+ls -ld sticky-dir
 
-# Exercise 6: Try special permissions
-chmod +x file3       # make executable
+# Exercise 4: Try deleting as different user
+touch sticky-dir/testfile
+# Only owner can delete due to sticky bit
+
+# Exercise 5: Set setgid on directory
+mkdir group-dir
+chmod 2775 group-dir
+ls -ld group-dir

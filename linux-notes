@@ -1,24 +1,21 @@
-# Phase 3: Linux Permissions & Ownership
+# Phase 4: Ownership, Groups & Sticky Bits
 
-## 1. File Permissions Overview
-- Linux permissions: `r` (read), `w` (write), `x` (execute)
-- Owner, Group, Others
-- View permissions: `ls -l`
+## 1. Ownership
+- Every file has an **owner** and a **group**
+- Check with `ls -l` or `stat file.txt`
 
-## 2. Changing Permissions
-- `chmod 644 file.txt` → owner read/write, group/others read
-- `chmod 755 script.sh` → owner read/write/execute, others read/execute
+## 2. Groups
+- Users can belong to multiple groups
+- `groups username` → lists groups
+- `chgrp group file.txt` → change file's group
 
-## 3. Changing Ownership
-- `chown user file.txt` → change owner
-- `chown user:group file.txt` → change owner and group
+## 3. Sticky Bit
+- Special permission mostly on **directories**
+- Only owner can delete files in a sticky directory
+- Example: `/tmp` has sticky bit (`drwxrwxrwt`)
+- Set sticky bit: `chmod +t dir_name`
 
-## 4. Special Permissions
-- `chmod +x file` → make executable
-- `chmod u+s file` → setuid
-- `chmod g+s dir` → setgid
-
-## 5. Directory Permissions
-- `r` → list files
-- `w` → create/delete files
-- `x` → access files in dir
+## 4. Practical Notes
+- Use `sudo` for files you don’t own
+- Use `chmod` and `chown` carefully
+- Combine permissions: e.g., `chmod 2775 dir_name` → setgid + rwxrwxr-x
