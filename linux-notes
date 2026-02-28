@@ -1,24 +1,21 @@
-# Phase 1: Navigation & File System Basics
+# Phase 4: Ownership, Groups & Sticky Bits
 
-pwd → show current directory
-ls → list files
-ls -la → list hidden files
-cd directory → change directory
-cd .. → go back
-clear → clear terminal
+## 1. Ownership
+- Every file has an **owner** and a **group**
+- Check with `ls -l` or `stat file.txt`
 
-# Phase 2: File & Directory Management
+## 2. Groups
+- Users can belong to multiple groups
+- `groups username` → lists groups
+- `chgrp group file.txt` → change file's group
 
-touch file.txt → create file
-mkdir folder → create directory
-cp file1 file2 → copy
-mv old new → rename/move
-rm file → delete file
-rm -r folder → delete directory
+## 3. Sticky Bit
+- Special permission mostly on **directories**
+- Only owner can delete files in a sticky directory
+- Example: `/tmp` has sticky bit (`drwxrwxrwt`)
+- Set sticky bit: `chmod +t dir_name`
 
-# Phase 3: File Permissions
-
-ls -l → view permissions
-chmod +x file → add execute
-chmod 755 file → numeric permissions
-chown user file → change owner
+## 4. Practical Notes
+- Use `sudo` for files you don’t own
+- Use `chmod` and `chown` carefully
+- Combine permissions: e.g., `chmod 2775 dir_name` → setgid + rwxrwxr-x

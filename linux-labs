@@ -1,18 +1,23 @@
-Phase 1
-pwd
-ls -la
-cd /tmp
-cd ~
+# Phase 4: Ownership, Groups & Sticky Bits Exercises
 
-Phase 2
-touch test.txt
-mkdir test-folder
-cp test.txt copy.txt
-mv copy.txt renamed.txt
-rm renamed.txt
-rm -r test-folder
+# Exercise 1: Check current ownership and groups
+ls -l
+groups
 
-phase 3
-touch script.sh
-chmod +x script.sh
-ls -l script.sh
+# Exercise 2: Change file owner and group
+sudo chown nambia-mangare file1
+sudo chgrp staff file1
+
+# Exercise 3: Explore sticky bit
+mkdir sticky-dir
+chmod 1777 sticky-dir   # set sticky bit
+ls -ld sticky-dir
+
+# Exercise 4: Try deleting as different user
+touch sticky-dir/testfile
+# Only owner can delete due to sticky bit
+
+# Exercise 5: Set setgid on directory
+mkdir group-dir
+chmod 2775 group-dir
+ls -ld group-dir
