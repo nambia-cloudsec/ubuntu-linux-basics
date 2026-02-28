@@ -1,21 +1,82 @@
-# Phase 4: Ownership, Groups & Sticky Bits
+# Phase 5: Advanced Permissions (SUID, SGID, Sticky Bit & ACLs)
 
-## 1. Ownership
-- Every file has an **owner** and a **group**
-- Check with `ls -l` or `stat file.txt`
+## 1. Special Permission Bits
 
-## 2. Groups
-- Users can belong to multiple groups
-- `groups username` → lists groups
-- `chgrp group file.txt` → change file's group
+There are three advanced permission bits in Linux:
 
-## 3. Sticky Bit
-- Special permission mostly on **directories**
-- Only owner can delete files in a sticky directory
-- Example: `/tmp` has sticky bit (`drwxrwxrwt`)
-- Set sticky bit: `chmod +t dir_name`
+1. SUID (Set User ID)
+2. SGID (Set Group ID)
+3. Sticky Bit
 
-## 4. Practical Notes
-- Use `sudo` for files you don’t own
-- Use `chmod` and `chown` carefully
-- Combine permissions: e.g., `chmod 2775 dir_name` → setgid + rwxrwxr-x
+---
+
+## 2. SUID (Set User ID)
+
+- When applied to an executable file, it runs with the owner's permissions.
+- Symbolic: `chmod u+s file`
+- Numeric: `chmod 4755 file`
+
+Example:-rwsr-xr-x
+
+
+Notice the `s` in place of execute for user.
+
+Common example:
+`/usr/bin/passwd` runs as root using SUID.
+
+---
+
+## 3. SGID (Set Group ID)
+
+- On files → runs with group permissions.
+- On directories → new files inherit the directory's group.
+
+Symbolic:
+`chmod g+s dir`
+
+Numeric:
+`chmod 2775 dir`
+
+Example:drwxrwsr-x
+
+
+---
+
+## 4. Sticky Bit
+
+- Used mostly on shared directories.
+- Only file owner can delete their own files.
+- Common on `/tmp`.
+
+Symbolic:
+`chmod +t dir`
+
+Numeric:
+`chmod 1777 dir`
+
+Example:drwxrwxrwt
+
+
+---
+
+## 5. ACL (Access Control Lists)
+
+ACL allows more fine-grained permissions beyond owner/group/others.
+
+Check if ACL is supported:
+`getfacl file`
+
+Set ACL:
+`setfacl -m u:username:rwx file`
+
+Remove ACL:
+`setfacl -x u:username file`
+
+---
+
+## 6. Key Takeaways
+
+- Use SUID carefully (security risk if misused).
+- SGID useful for shared team directories.
+- Sticky bit prevents users from deleting others' files.
+- ACL provides advanced permission control.

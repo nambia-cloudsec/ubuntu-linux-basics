@@ -1,23 +1,28 @@
-# Phase 4: Ownership, Groups & Sticky Bits Exercises
+# ==============================
+# Phase 5: Advanced Permissions Labs
+# ==============================
 
-# Exercise 1: Check current ownership and groups
-ls -l
-groups
+# 1. Create test executable
+touch testscript.sh
+chmod 755 testscript.sh
+ls -l testscript.sh
 
-# Exercise 2: Change file owner and group
-sudo chown nambia-mangare file1
-sudo chgrp staff file1
+# 2. Apply SUID
+chmod 4755 testscript.sh
+ls -l testscript.sh
 
-# Exercise 3: Explore sticky bit
-mkdir sticky-dir
-chmod 1777 sticky-dir   # set sticky bit
-ls -ld sticky-dir
+# 3. Create shared directory
+mkdir shared-dir
+chmod 2775 shared-dir
+ls -ld shared-dir
 
-# Exercise 4: Try deleting as different user
-touch sticky-dir/testfile
-# Only owner can delete due to sticky bit
+# 4. Apply sticky bit
+mkdir public-dir
+chmod 1777 public-dir
+ls -ld public-dir
 
-# Exercise 5: Set setgid on directory
-mkdir group-dir
-chmod 2775 group-dir
-ls -ld group-dir
+# 5. Test ACL (install if needed)
+sudo apt install acl -y
+touch acl-file
+setfacl -m u:nambia-mangare:rwx acl-file
+getfacl acl-file
