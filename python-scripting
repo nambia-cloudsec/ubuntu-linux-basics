@@ -1,41 +1,43 @@
-# Python Scripting Notes
+# Python Scripting – Phase 9 & 10
 
-## 1. Check Python Version
+# 1. Basic Output
+print("Hello, World!")
 
-python3 --version
-
----
-
-## 2. Create Python Script
-
-touch script.py
-
-Run:
-python3 script.py
-
----
-
-## 3. Basic Python Script
-
-print("Hello Lucy")
-
----
-
-## 4. Variables
-
+# 2. Variables
 name = "Lucy"
-print(name)
+print(f"My name is {name}")
 
----
-
-## 5. User Input
-
+# 3. User Input
 user = input("Enter your name: ")
-print("Hello", user)
+print(f"Welcome {user}")
 
----
+# 4. Conditionals
+if user == "admin":
+    print("You are the administrator.")
+else:
+    print("Standard user.")
 
-## 6. If Statement
+# 5. Loops
+for i in range(1, 6):
+    print(f"Number {i}")
 
-if user == "Lucy":
-    print("Welcome back!")
+count = 1
+while count <= 3:
+    print(f"Count {count}")
+    count += 1
+
+# 6. Functions
+def greet(person):
+    print(f"Hello {person}")
+
+greet("Lucy")
+
+# 7. Working with Files
+with open("testfile.txt", "w") as f:
+    f.write("This is a test file.")
+
+# 8. Simple Backup Simulation
+import shutil
+shutil.copy("testfile.txt", "testfile_backup.txt")
+
+print("Backup completed.")

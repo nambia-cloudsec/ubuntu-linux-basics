@@ -1,26 +1,52 @@
-# ==============================
-# Bash Practice Labs
-# ==============================
+# Bash Scripting – Phase 9 & 10
 
-# Create first script
-touch hello.sh
-chmod +x hello.sh
-
-# Add inside hello.sh:
+# 1. Basic Script Structure
 #!/bin/bash
-echo "Hello Lucy"
+# This is a simple hello script
+echo "Hello, World!"
 
-# Run it
-./hello.sh
+# 2. Variables
+NAME="Lucy"
+echo "My name is $NAME"
 
-# Create interactive script
-touch greet.sh
-chmod +x greet.sh
+# 3. User Input
+read -p "Enter your name: " USER
+echo "Welcome $USER"
 
-# Add:
-#!/bin/bash
-read -p "Enter your name: " name
-echo "Welcome $name"
+# 4. Conditionals
+if [ "$USER" = "admin" ]; then
+    echo "You are the administrator."
+else
+    echo "Standard user."
+fi
 
-# Run
-./greet.sh
+# 5. Loops
+# For loop
+for i in {1..5}; do
+    echo "Number $i"
+done
+
+# While loop
+COUNT=1
+while [ $COUNT -le 3 ]; do
+    echo "Count $COUNT"
+    COUNT=$((COUNT+1))
+done
+
+# 6. Functions
+greet() {
+    echo "Hello $1"
+}
+greet Lucy
+
+# 7. Working with Files
+touch testfile.txt
+if [ -f testfile.txt ]; then
+    echo "File exists."
+fi
+
+# 8. Simple Backup Script
+mkdir -p backups
+cp testfile.txt backups/
+
+echo "Backup completed."
