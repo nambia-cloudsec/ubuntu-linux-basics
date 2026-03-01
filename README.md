@@ -1,76 +1,60 @@
-cat > README.md <<'EOF'
-# Ubuntu Linux Fundamentals & Scripting Portfolio
+# Hi, I am Nambia Mangare
 
-## Overview
-This repository documents my structured hands-on learning journey in Linux fundamentals, system administration, and scripting.
-
-The project is organized into 10 progressive phases covering:
-
-- Linux navigation & filesystem
-- Permissions & ownership
-- Process management
-- Networking basics
-- Package management
-- Logging & backups
-- Bash scripting
-- Python scripting
-
-This repository serves as a practical foundation for my Cloud Security and Systems Engineering career path.
+Cloud Security & Systems Engineering Enthusiast  
+Practical foundation in Linux, Python, Bash, and Cloud Security labs.
 
 ---
 
-## Project Structure
+## 📂 Project Structure
+
+This repository is designed to showcase my **Linux foundations, scripting skills, and hands-on labs**.
 
 ubuntu-linux-basics/
-│
-├── linux-notes        # Consolidated Phase 1–10 Linux theory notes
-├── linux-labs         # Practical command-based lab exercises
-├── bash-scripting     # Bash scripting exercises and automation examples
-├── python-scripting   # Python scripting exercises and file handling examples
-└── README.md          # Project documentation
+├── linux-notes # Phase 1–10 Linux notes
+├── linux-labs # Phase 1–10 Linux practical exercises
+├── bash-scripting # Dedicated Bash scripting exercises
+├── python-scripting # Dedicated Python scripting exercises
+├── python-scripts # Additional scripts for practice
+├── README.md # This portfolio README
+├── Nambia_CV.md # Internship CV in Markdown
+└── Nambia_CV.pdf # Internship-ready PDF CV
+
 
 ---
 
-## Skills Demonstrated
+## 💻 Technical Skills
 
-### Linux System Fundamentals
-- File system navigation and management
-- Permissions (rwx), ownership, groups
-- SUID, SGID, Sticky Bit, ACL
-- Process management and signals
-- System logging and monitoring
-
-### Networking Basics
-- IP inspection
-- Connectivity testing (ping, curl, ss)
-- Basic troubleshooting
-
-### Package Management
-- apt update/upgrade/install/remove
-- System maintenance operations
-
-### Automation & Scripting
-- Bash scripting fundamentals
-- Conditional logic and loops
-- File handling automation
-- Python scripting for system tasks
-- Backup simulations
+- Linux & Unix Systems Administration
+- Cloud Security Fundamentals
+- Python Scripting
+- Bash Scripting
+- Networking & DNS Configuration
+- Git & GitHub
 
 ---
 
-## Key Commands Practiced
+## 📄 Projects & Labs
 
-pwd, ls, cd, mkdir, rm  
-chmod, chown, chgrp  
-ps, top, kill  
-ip a, ping, ss  
-apt install, apt remove  
-journalctl, tail -f  
+**Ubuntu Linux Basics**  
+- Phase 1–10 Linux Notes & Labs  
+- Exercises on file system, permissions, processes, networking, and scripting
+
+**Python Scripting**  
+- Automation, data processing, and practice scripts
+
+**Bash Scripting**  
+- Linux automation and task scheduling
 
 ---
 
-## Sample Bash Script
+## 📄 CV
 
-```bash
-#!/bin/bash
-echo "Hello, World!"
+You can download my internship-ready CV here:  
+[**Nambia Mangare - PDF CV**](./Nambia_CV.pdf)
+
+---
+
+## 🔗 Connect With Me
+
+- GitHub: [nambia-cloudsec](https://github.com/nambia-cloudsec)  
+- LinkedIn: [linkedin.com/in/nambia](https://www.linkedin.com/in/nambia)
