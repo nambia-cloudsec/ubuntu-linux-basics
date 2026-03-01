@@ -8,7 +8,7 @@ Cloud Security & Systems Engineering Enthusiast
 
 Email: nambia.mangare26@gmail.com 
 GitHub: [nambia-cloudsec](https://github.com/nambia-cloudsec)  
-LinkedIn: 
+LinkedIn: www.linkedin.com/in/lucy-nambia-mangare-5b22723b4
 
 ---
 
