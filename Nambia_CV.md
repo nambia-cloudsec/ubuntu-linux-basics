@@ -6,9 +6,9 @@ Cloud Security & Systems Engineering Enthusiast
 
 ## Contact
 
-Email: nambia@example.com  
+Email: nambia.mangare26@gmail.com 
 GitHub: [nambia-cloudsec](https://github.com/nambia-cloudsec)  
-LinkedIn: [linkedin.com/in/nambia](https://www.linkedin.com/in/nambia)
+LinkedIn: 
 
 ---
 
