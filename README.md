@@ -1,7 +1,7 @@
 # Hi, I am Nambia
 
 Welcome to my **Cloud Security & Systems Engineering portfolio**.  
-This repository contains all my practical and theoretical work, organized for clarity and career presentation.
+This repository contains all my practical and theoretical work, organized for career presentation.
 
 ---
 
@@ -11,8 +11,8 @@ This repository contains all my practical and theoretical work, organized for cl
 
 | File / Folder | Description |
 |---------------|-------------|
-| `linux-notes` | All Linux theory notes (Phases 1–10) |
-| `linux-labs` | All Linux practical labs (Phases 1–10) |
+| `linux-notes` | Linux theory notes (Phases 1–10) |
+| `linux-labs` | Linux practical labs (Phases 1–10) |
 | `bash-scripting` | Dedicated Bash scripts |
 | `python-scripting` | Dedicated Python scripts |
 | `Nambia_CV.pdf` | Internship-ready CV |
@@ -29,14 +29,14 @@ This repository contains all my practical and theoretical work, organized for cl
 - Phase 1 → Phase 10 included in `linux-labs`
 
 ### **Commands / Topics Learned**
-- Linux Navigation: `ls`, `cd`, `pwd`, `tree`, `man`
+- Navigation: `ls`, `cd`, `pwd`, `tree`, `man`
 - File Management: `cp`, `mv`, `rm`, `touch`, `mkdir`
 - Permissions & Ownership: `chmod`, `chown`, `chgrp`, SUID/SGID, sticky bit, ACLs
 - Linux File System: `/etc`, `/var`, `/usr`, `/home`, `/bin`, `/sbin`, `/tmp`
 - Processes & Jobs: `ps`, `top`, `jobs`, `fg`, `bg`, signals (`kill`)
 - Networking Basics: `ifconfig`, `netstat`, `ping`, `traceroute`, `curl`
 - Shell Scripting: Bash loops, conditionals, variables, functions
-- Python Scripting: Basic scripts for automation and text processing
+- Python Scripting: Basic automation and text processing
 
 ---
 
@@ -58,8 +58,8 @@ This repository contains all my practical and theoretical work, organized for cl
 ## 📊 GitHub Stats
 
 - GitHub streak: ![GitHub Streak](https://streak-stats.demolab.com?user=nambia-cloudsec)
-- Top Languages: ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=nambia-cloudsec&layout=compact)
-- Contribution Graph: ![Contribution Graph](https://activity-graph.herokuapp.com/graph?username=nambia-cloudsec&theme=react-dark)
+- Top Languages: ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=nambia-cloudsec&layout=compact&theme=dark)
+- Contribution Graph: ![Contribution Graph](https://github-readme-stats.vercel.app/api?username=nambia-cloudsec&show_icons=true&theme=dark)
 
 ---
 
@@ -71,7 +71,4 @@ This repository contains all my practical and theoretical work, organized for cl
 - [Python Scripting](./python-scripting)
 - [My GitHub Profile](https://github.com/nambia-cloudsec)
 
----
-
-> This repository serves as a **practical foundation for my Cloud Security and Systems Engineering career path**.  
-> All work is structured, committed phase-wise, and documented for clarity.
+> This repository serves as a **practical foundation for my Cloud Security and Systems Engineering career path**.
