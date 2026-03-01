@@ -51,3 +51,30 @@
 - View logs: `tail -f /var/log/syslog`
 - Backup config: `cp /etc/netplan/*.yaml ~/backups/`
 - Create sample snapshot in VM
+
+ROADMAP:
+# Linux Fundamentals Lab
+
+## Phase 1: Navigation & File System
+## Phase 2: File Operations
+## Phase 3: Permissions & Ownership
+## Phase 4: Users & Groups
+## Phase 5: Processes
+## Phase 6: Package Management
+## Phase 7: Networking Basics
+## Phase 8: Redirection & Pipes
+## Phase 9: Environment & Shell Basics
+
+## Phase 1 - Navigation
+
+### pwd
+Print working directory.
+Shows absolute path of current location.
+
+### ls -la
+Lists all files including hidden files.
+First column shows file type and permissions.
+
+### Absolute vs Relative Paths
+/ = root
+~ = home directory
