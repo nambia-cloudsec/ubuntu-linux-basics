@@ -58,10 +58,6 @@ This repository contains all my practical and theoretical work, organized for ca
 ## 📊 GitHub Stats
 
 - GitHub streak: ![GitHub Streak](https://streak-stats.demolab.com?user=nambia-cloudsec)
-- Top Languages: ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=nambia-cloudsec&layout=compact&theme=dark)
-- Contribution Graph: ![Contribution Graph](https://github-readme-stats.vercel.app/api?username=nambia-cloudsec&show_icons=true&theme=dark)
-
----
 
 ## 🔗 Useful Links
 
