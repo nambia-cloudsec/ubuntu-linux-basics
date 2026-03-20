@@ -172,3 +172,21 @@ Ownership control
 How systems enforce access
 
 This is directly used in cloud security roles.
+
+chmod 600 file.txt means:
+
+Owner (you) → can read & write (rw-)
+
+Group → no permissions (---)
+
+Others → no permissions (---)
+
+So only you can access the file, making it private and secure.
+
+Example ls -l output:
+
+-rw------- 1 nambia-mangare nambia-mangare 0 Mar 20 12:00 file.txt
+
+The dashes after the first rw indicate no permissions for group or others.
+
+This is the standard way to protect sensitive files in Linux.
