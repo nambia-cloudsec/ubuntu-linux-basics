@@ -190,3 +190,104 @@ Example ls -l output:
 The dashes after the first rw indicate no permissions for group or others.
 
 This is the standard way to protect sensitive files in Linux.
+Let’s move to the Processes & System Monitoring Lab — a core skill for mastering Linux and understanding how the system works.
+
+Linux Processes & System Monitoring Lab
+Objective
+
+Learn how to view running processes
+
+Understand CPU and memory usage
+
+Manage processes safely (stop, kill, inspect)
+
+Document exercises in GitHub
+
+Step 1 — Check running processes
+ps
+
+Shows processes running in the current terminal session
+
+Output example:
+
+  PID TTY          TIME CMD
+ 1234 pts/0    00:00:00 bash
+ 5678 pts/0    00:00:01 top
+
+Explanation:
+
+PID → Process ID
+
+TTY → Terminal the process is attached to
+
+TIME → CPU time used
+
+CMD → Command that started the process
+
+Step 2 — See all processes
+ps aux
+
+Shows all running processes
+
+Useful for seeing system-wide activity
+
+Columns:
+
+USER → who started the process
+
+PID → process ID
+
+%CPU / %MEM → resource usage
+
+COMMAND → what is running
+
+Step 3 — Monitor processes live
+top
+
+Opens live process monitor
+
+Shows CPU, memory, processes
+
+Use q to quit
+
+Optional: try htop if installed (better visual):
+
+sudo apt install htop
+htop
+Step 4 — Find a process by name
+ps aux | grep bash
+
+Filters processes containing “bash”
+
+Useful to locate specific programs
+
+Step 5 — Stop a process
+
+First, find its PID:
+
+ps aux | grep firefox
+
+Then terminate it safely:
+
+kill PID
+
+If it refuses, force kill:
+
+kill -9 PID
+
+⚠️ Use force only if needed; safe practice first.
+
+Step 6 — Check system load
+uptime
+
+Shows how long system has been running
+
+Load averages for 1, 5, 15 minutes
+
+df -h
+
+Shows disk usage
+
+free -h
+
+Shows memory usage
