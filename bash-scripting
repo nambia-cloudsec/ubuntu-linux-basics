@@ -1,52 +1,16 @@
-# Bash Scripting – Phase 9 & 10
+# Scripting & Automation Lab
 
-# 1. Basic Script Structure
-#!/bin/bash
-# This is a simple hello script
-echo "Hello, World!"
+## Commands & Concepts Learned
+- Bash scripts (`.sh`)
+- chmod +x to make scripts executable
+- echo for output
+- Variables ($NAME, $(command))
+- Conditional statements (`if-else`)
+- Loops (`for`)
+- Running scripts `./script.sh`
 
-# 2. Variables
-NAME="Lucy"
-echo "My name is $NAME"
-
-# 3. User Input
-read -p "Enter your name: " USER
-echo "Welcome $USER"
-
-# 4. Conditionals
-if [ "$USER" = "admin" ]; then
-    echo "You are the administrator."
-else
-    echo "Standard user."
-fi
-
-# 5. Loops
-# For loop
-for i in {1..5}; do
-    echo "Number $i"
-done
-
-# While loop
-COUNT=1
-while [ $COUNT -le 3 ]; do
-    echo "Count $COUNT"
-    COUNT=$((COUNT+1))
-done
-
-# 6. Functions
-greet() {
-    echo "Hello $1"
-}
-greet Lucy
-
-# 7. Working with Files
-touch testfile.txt
-if [ -f testfile.txt ]; then
-    echo "File exists."
-fi
-
-# 8. Simple Backup Script
-mkdir -p backups
-cp testfile.txt backups/
-
-echo "Backup completed."
+## Key Learnings
+- Scripts automate repetitive tasks
+- Variables store data
+- Conditional statements and loops add logic
+- Scripts can combine multiple commands
