@@ -48,3 +48,21 @@
 - top shows real-time system activity
 - kill stops processes
 - System monitoring is critical for performance and troubleshooting
+# Linux Networking Lab
+
+## Commands Learned
+- ip a / ifconfig
+- ping
+- route -n / ip route
+- netstat / ss
+- curl
+- traceroute
+- nslookup
+
+## Key Learnings
+- ip/ifconfig shows IP and interfaces
+- ping tests connectivity
+- traceroute shows network path
+- netstat/ss shows listening services
+- curl checks server responses
+- nslookup helps with DNS troubleshooting
