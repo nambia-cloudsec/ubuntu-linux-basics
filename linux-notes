@@ -132,3 +132,43 @@ No one else can access
 👉 Expected command:
 
 chmod 600 secure-data.txt
+📝 Document in GitHub
+
+Open your lab file:
+
+nano ~/ubuntu-linux-basics/linux-labs
+
+Add:
+
+# Permissions Lab
+
+## Commands Used
+- ls -l
+- chmod
+- chown
+
+## Key Learnings
+- Linux uses rwx permissions
+- Permissions are divided into owner, group, others
+- chmod changes access rights
+- chown changes ownership
+- 600 = private file
+- 644 = standard file
+- 777 = full access (not secure)
+🚀 Commit Your Work
+git add linux-labs
+git commit -m "Completed permissions lab"
+git push
+🔥 What You Just Learned
+
+You now understand:
+
+File security in Linux
+
+Permission structures
+
+Ownership control
+
+How systems enforce access
+
+This is directly used in cloud security roles.
