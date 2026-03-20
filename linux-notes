@@ -291,3 +291,84 @@ Shows disk usage
 free -h
 
 Shows memory usage
+Let’s move on to the Linux Networking Commands Lab — essential for cloud, DevOps, and security work.
+
+Linux Networking Commands Lab
+Objective
+
+Understand basic network commands
+
+Test connectivity and network configuration
+
+Document exercises in GitHub
+
+Step 1 — Check your IP address
+ip a
+
+or older version:
+
+ifconfig
+
+Explanation:
+
+Shows IP address, subnet, and network interface status
+
+Example output snippet:
+
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500
+    inet 192.168.1.10/24 brd 192.168.1.255 scope global dynamic enp0s3
+
+inet → your IPv4 address
+
+enp0s3 → interface name
+
+Step 2 — Test connectivity
+
+Ping a host:
+
+ping google.com -c 4
+
+-c 4 → send 4 packets
+
+Output shows response time for each packet
+
+Step 3 — Check routing table
+route -n
+
+or modern:
+
+ip route
+
+Shows default gateway and routing paths
+
+Step 4 — Check network services
+netstat -tulnp
+
+or modern:
+
+ss -tulnp
+
+Shows active TCP/UDP listening ports
+
+Useful for troubleshooting services
+
+Step 5 — Test external connectivity
+curl -I https://www.google.com
+
+Returns HTTP headers from the server
+
+Confirms internet connection and server response
+
+Step 6 — Trace route
+traceroute google.com
+
+Shows the path packets take to reach a host
+
+Helps identify network bottlenecks
+
+Step 7 — DNS lookup
+nslookup google.com
+
+Shows IP addresses associated with a domain
+
+Useful for troubleshooting DNS issues
