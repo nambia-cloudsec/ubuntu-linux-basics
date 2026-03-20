@@ -1,15 +1,15 @@
-# Linux Navigation Lab
+# Sudo Practice Lab
 
-Commands practiced:
+**Commands Learned:**
+- whoami
+- ls /root
+- sudo ls /root
+- sudo -l
+- sudo mkdir /tmp/test_sudo_lab
+- sudo rmdir /tmp/test_sudo_lab
+- sudo !!
 
-pwd
-ls
-ls -l
-ls -a
-cd
-cd ..
-cd ~
-
-Key learning:
-Linux navigation uses a hierarchical file system starting at /
-
+**Lessons:**
+- Normal users cannot access root-only files
+- `sudo` allows temporary root privileges
+- Always use `sudo` safely; mistakes can affect the system
