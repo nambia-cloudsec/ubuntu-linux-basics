@@ -1,61 +1,134 @@
-Linux Sudo Lab – Beginner Exercise
-Objective
+File Permissions & Ownership Lab (Core Linux Skill)
 
-Understand what sudo does
+This is critical for:
 
-Learn when and how to use it safely
+Cloud security
 
-Practice running commands as a superuser
+AWS / Azure IAM concepts
 
-Step 1 — Check your current user
-whoami
+Server access control
 
-Output example: nambia-mangare
+🎯 Objective
 
-This shows you’re a normal user.
+You will learn:
 
-Step 2 — List a root-only directory
-ls /root
+How Linux controls access to files
 
-Likely: Permission denied
+How to read permissions
 
-This shows that normal users cannot access root directories without sudo.
+How to modify permissions safely
 
-Step 3 — Try with sudo
-sudo ls /root
+How ownership works
 
-You will be prompted for your password
+🧠 Step 1 — Understand Permissions
 
-After entering it correctly, you’ll see the contents.
+Run:
 
-Lesson: sudo lets you temporarily act as root.
+ls -l
 
-Step 4 — Check sudo privileges
-sudo -l
+Example output:
 
-Lists what commands you are allowed to run as root
+-rw-rw-r-- 1 nambia-mangare nambia-mangare 2176 Mar 1 notes.txt
+Break it down:
+-rw-rw-r--
+│ │ │ │
+│ │ │ └── Others permissions
+│ │ └──── Group permissions
+│ └────── Owner permissions
+└──────── File type
+🔑 Meaning of symbols
+Symbol	Meaning
+r	read
+w	write
+x	execute
+-	no permission
+🧪 Step 2 — Create Practice Environment
+cd ~/ubuntu-linux-basics/linux-practice
+mkdir permissions-lab
+cd permissions-lab
 
-Helps you understand your permissions
+touch file1.txt
+touch file2.txt
 
-Step 5 — Safe root command practice
+Check:
 
-Create a folder in a root-only location:
+ls -l
+🔐 Step 3 — Change Permissions (chmod)
+Remove all permissions:
+chmod 000 file1.txt
 
-sudo mkdir /tmp/test_sudo_lab
+Check:
 
-Check it:
+ls -l
 
-ls -l /tmp | grep test_sudo_lab
+👉 You should see:
 
-Remove it:
+---------- file1.txt
 
-sudo rmdir /tmp/test_sudo_lab
+Now try:
 
-Lesson: You can practice safely in /tmp without harming your system.
+cat file1.txt
 
-Step 6 — Running the last command with sudo
+❌ You will get Permission denied
 
-If you forget sudo for a command:
+Give full permissions:
+chmod 777 file1.txt
 
-apt update       # run normally → may fail
-sudo !!          # reruns previous command as root
+Now:
+
+ls -l
+-rwxrwxrwx file1.txt
+⚠️ Important Concept
+Permission	Meaning
+777	full access (not secure)
+755	common for scripts
+644	common for files
+🧪 Step 4 — Use Secure Permissions
+chmod 644 file2.txt
+
+Check:
+
+ls -l
+👤 Step 5 — Ownership (chown)
+
+Check owner:
+
+ls -l
+
+Change owner (requires sudo):
+
+sudo chown root:root file1.txt
+
+Check:
+
+ls -l
+
+👉 Owner should now be root
+
+🧠 Step 6 — Why This Matters
+
+This is exactly how:
+
+Servers restrict access
+
+Logs are protected
+
+Sensitive files are secured
+
+Cloud permissions work (similar concept to IAM)
+
+🧪 Mini Challenge
+
+Create a file:
+
+touch secure-data.txt
+
+Set permissions so:
+
+Only YOU can read/write
+
+No one else can access
+
+👉 Expected command:
+
+chmod 600 secure-data.txt
