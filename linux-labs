@@ -1,15 +1,15 @@
-# Sudo Practice Lab
+# Permissions Lab
 
-**Commands Learned:**
-- whoami
-- ls /root
-- sudo ls /root
-- sudo -l
-- sudo mkdir /tmp/test_sudo_lab
-- sudo rmdir /tmp/test_sudo_lab
-- sudo !!
+## Commands Used
+- ls -l
+- chmod
+- chown
 
-**Lessons:**
-- Normal users cannot access root-only files
-- `sudo` allows temporary root privileges
-- Always use `sudo` safely; mistakes can affect the system
+## Key Learnings
+- Linux uses rwx permissions
+- Permissions are divided into owner, group, others
+- chmod changes access rights
+- chown changes ownership
+- 600 = private file
+- 644 = standard file
+- 777 = full access (not secure)
