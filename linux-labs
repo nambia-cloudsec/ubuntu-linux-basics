@@ -30,3 +30,21 @@
 - 600 = private file
 - 644 = standard file
 - 777 = full access (not secure)
+# Processes & System Monitoring Lab
+
+## Commands Learned
+- ps
+- ps aux
+- ps aux | grep <process>
+- top
+- kill <PID>
+- kill -9 <PID>
+- uptime
+- free -h
+- df -h
+
+## Key Learnings
+- PID identifies each process
+- top shows real-time system activity
+- kill stops processes
+- System monitoring is critical for performance and troubleshooting
