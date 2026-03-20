@@ -1,3 +1,20 @@
+
+
+# Permissions Lab
+
+## Commands Used
+- ls -l
+- chmod
+- chown
+
+## Key Learnings
+- Linux uses rwx permissions
+- Permissions are divided into owner, group, others
+- chmod changes access rights
+- chown changes ownership
+- 600 = private file
+- 644 = standard file
+- 777 = full access (not secure)
 # Permissions Lab
 
 ## Commands Used
