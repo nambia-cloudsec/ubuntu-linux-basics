@@ -372,3 +372,222 @@ nslookup google.com
 Shows IP addresses associated with a domain
 
 Useful for troubleshooting DNS issues
+
+Let’s move to Linux Scripting & Automation Lab — this is where Linux mastery starts to feel powerful. You’ll learn how to automate repetitive tasks, manipulate files, and even prepare for DevOps/Cloud roles.
+
+Linux Scripting & Automation Lab
+Objective
+
+Learn basic bash scripting
+
+Automate tasks using scripts
+
+Document exercises in GitHub
+
+Step 1 — Create a script file
+cd ~/ubuntu-linux-basics/linux-practice
+mkdir -p scripting-lab
+cd scripting-lab
+
+touch my_first_script.sh
+
+.sh indicates a bash script
+
+Step 2 — Make it executable
+chmod +x my_first_script.sh
+
+Now you can run it with ./my_first_script.sh
+
+Step 3 — Open and write a script
+nano my_first_script.sh
+
+Add the following:
+
+#!/bin/bash
+# My first bash script
+
+echo "Hello Linux Mastery!"
+pwd
+ls -l
+
+Explanation:
+
+#!/bin/bash → tells the system this is a bash script
+
+echo → prints a message
+
+pwd → shows current directory
+
+ls -l → lists files
+
+Step 4 — Run your script
+./my_first_script.sh
+
+Output should show:
+
+Hello Linux Mastery!
+/home/nambia-mangare/ubuntu-linux-basics/linux-practice/scripting-lab
+total 0
+-rwxr-xr-x 1 nambia-mangare nambia-mangare  85 Mar 20 12:00 my_first_script.sh
+Step 5 — Add variables
+
+Edit my_first_script.sh:
+
+#!/bin/bash
+
+NAME="Lucy"
+echo "Hello $NAME, welcome to Linux Scripting Lab!"
+DATE=$(date)
+echo "Today is $DATE"
+
+Run:
+
+./my_first_script.sh
+
+$NAME → variable
+
+$(date) → command substitution
+
+Step 6 — Conditional statements
+
+Edit script:
+
+#!/bin/bash
+
+NUMBER=5
+
+if [ $NUMBER -gt 3 ]; then
+  echo "The number is greater than 3"
+else
+  echo "The number is 3 or less"
+fi
+
+Basic if statement for decision making
+
+Step 7 — Loops
+#!/bin/bash
+
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+
+for loop to repeat tasks
+
+Step 8 — Combine commands
+#!/bin/bash
+
+echo "Listing home directory files:"
+ls ~
+echo "Disk usage:"
+df -h
+
+You can combine multiple commands in a script
+Let’s move to Linux Scripting & Automation Lab — this is where Linux mastery starts to feel powerful. You’ll learn how to automate repetitive tasks, manipulate files, and even prepare for DevOps/Cloud roles.
+
+Linux Scripting & Automation Lab
+Objective
+
+Learn basic bash scripting
+
+Automate tasks using scripts
+
+Document exercises in GitHub
+
+Step 1 — Create a script file
+cd ~/ubuntu-linux-basics/linux-practice
+mkdir -p scripting-lab
+cd scripting-lab
+
+touch my_first_script.sh
+
+.sh indicates a bash script
+
+Step 2 — Make it executable
+chmod +x my_first_script.sh
+
+Now you can run it with ./my_first_script.sh
+
+Step 3 — Open and write a script
+nano my_first_script.sh
+
+Add the following:
+
+#!/bin/bash
+# My first bash script
+
+echo "Hello Linux Mastery!"
+pwd
+ls -l
+
+Explanation:
+
+#!/bin/bash → tells the system this is a bash script
+
+echo → prints a message
+
+pwd → shows current directory
+
+ls -l → lists files
+
+Step 4 — Run your script
+./my_first_script.sh
+
+Output should show:
+
+Hello Linux Mastery!
+/home/nambia-mangare/ubuntu-linux-basics/linux-practice/scripting-lab
+total 0
+-rwxr-xr-x 1 nambia-mangare nambia-mangare  85 Mar 20 12:00 my_first_script.sh
+Step 5 — Add variables
+
+Edit my_first_script.sh:
+
+#!/bin/bash
+
+NAME="Lucy"
+echo "Hello $NAME, welcome to Linux Scripting Lab!"
+DATE=$(date)
+echo "Today is $DATE"
+
+Run:
+
+./my_first_script.sh
+
+$NAME → variable
+
+$(date) → command substitution
+
+Step 6 — Conditional statements
+
+Edit script:
+
+#!/bin/bash
+
+NUMBER=5
+
+if [ $NUMBER -gt 3 ]; then
+  echo "The number is greater than 3"
+else
+  echo "The number is 3 or less"
+fi
+
+Basic if statement for decision making
+
+Step 7 — Loops
+#!/bin/bash
+
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+
+for loop to repeat tasks
+
+Step 8 — Combine commands
+#!/bin/bash
+
+echo "Listing home directory files:"
+ls ~
+echo "Disk usage:"
+df -h
+
+You can combine multiple commands in a script
