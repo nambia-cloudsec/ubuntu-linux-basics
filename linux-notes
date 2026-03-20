@@ -1,55 +1,61 @@
-# Phase 1: Linux Navigation & File Management
-- Commands: `pwd`, `ls`, `cd`, `mkdir`, `rmdir`, `cp`, `mv`, `rm`, `tree`
-- Viewing files: `cat`, `less`, `head`, `tail`
-- Hidden files: `ls -a`
-- Exercise: Navigate your home directory, create folders, move files
+Linux Sudo Lab – Beginner Exercise
+Objective
 
-# Phase 2: Linux File System Deep Dive
-- Key directories: `/etc`, `/var`, `/usr`, `/home`, `/bin`, `/sbin`, `/tmp`
-- Commands: `ls -l`, `du -sh`, `df -h`, `stat filename`
-- Exercise: Explore directories, check file sizes, disk usage
+Understand what sudo does
 
-# Phase 3: Linux Permissions & Ownership
-- File permissions: `r`, `w`, `x`
-- Owners: User, Group, Others
-- Commands: `ls -l`, `chmod`, `chown`, `chgrp`
-- Special permissions: SUID, SGID, Sticky Bit
-- Exercise: Change ownership, explore permissions
+Learn when and how to use it safely
 
-# Phase 4: Linux Ownership, Groups & Sticky Bits
-- Users & Groups management: `id`, `groups`, `usermod`
-- Sticky bit: `chmod +t file`
-- Exercise: Add users, assign groups, test sticky bit
+Practice running commands as a superuser
 
-# Phase 5: Advanced Linux Permissions
-- SUID: `chmod u+s file`
-- SGID: `chmod g+s file`
-- ACLs: `getfacl file`, `setfacl -m u:user:rw file`
-- Exercise: Set ACLs, test SUID/SGID
+Step 1 — Check your current user
+whoami
 
-# Phase 6: Processes, Background Jobs & Signals
-- Commands: `ps`, `top`, `htop`, `jobs`, `fg`, `bg`
-- Signals: `kill`, `killall`, `trap`
-- Exercise: Run background jobs, monitor and kill processes
+Output example: nambia-mangare
 
-# Phase 7: Networking Basics
-- Commands: `ip a`, `ping`, `netstat`, `ss`, `curl`, `dig`
-- Exercise: Test connectivity, inspect interfaces
+This shows you’re a normal user.
 
-# Phase 8: Package Management
-- Debian/Ubuntu: `apt update`, `apt upgrade`, `apt install`
-- RPM/Fedora: `yum install` / `dnf install`
-- Exercise: Install/remove packages, check version
+Step 2 — List a root-only directory
+ls /root
 
-# Phase 9: Shell Scripting Fundamentals
-- Variables: `VAR=value`, `$VAR`
-- Conditionals: `if`, `else`, `elif`
-- Loops: `for`, `while`, `until`
-- Functions: `myfunc() { ... }`
-- Exercise: Create simple scripts, loops, conditionals
+Likely: Permission denied
 
-# Phase 10: Logging, Backups & Snapshots
-- View logs: `journalctl`, `tail -f /var/log/syslog`
-- Backup configs: `cp /etc/netplan/*.yaml ~/backups/`
-- Snapshots in VM: Use VirtualBox snapshot feature
-- Exercise: Backup files, simulate a VM snapshot
+This shows that normal users cannot access root directories without sudo.
+
+Step 3 — Try with sudo
+sudo ls /root
+
+You will be prompted for your password
+
+After entering it correctly, you’ll see the contents.
+
+Lesson: sudo lets you temporarily act as root.
+
+Step 4 — Check sudo privileges
+sudo -l
+
+Lists what commands you are allowed to run as root
+
+Helps you understand your permissions
+
+Step 5 — Safe root command practice
+
+Create a folder in a root-only location:
+
+sudo mkdir /tmp/test_sudo_lab
+
+Check it:
+
+ls -l /tmp | grep test_sudo_lab
+
+Remove it:
+
+sudo rmdir /tmp/test_sudo_lab
+
+Lesson: You can practice safely in /tmp without harming your system.
+
+Step 6 — Running the last command with sudo
+
+If you forget sudo for a command:
+
+apt update       # run normally → may fail
+sudo !!          # reruns previous command as root
